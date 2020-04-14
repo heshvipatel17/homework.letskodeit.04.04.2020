@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test Case"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.216">
+  <properties />
+  
+  
+            <testcase name="verifyUserShouldClickOnSignUpLink" time="0.062" classname="com.letskodeit.learn.testsuite.TestCase" />
+                <testcase name="verifyUserShouldClickOnLoginLink" time="0.053" classname="com.letskodeit.learn.testsuite.TestCase" />
+                <testcase name="verifyUserShouldGetWelcomeText" time="0.036" classname="com.letskodeit.learn.testsuite.TestCase" />
+                <testcase name="verifyUserShouldClickOnPracticeLink" time="0.065" classname="com.letskodeit.learn.testsuite.TestCase" />
+      
+</testsuite>

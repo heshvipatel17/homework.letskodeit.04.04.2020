@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.letskodeit.learn</groupId>
-  <artifactId>letskodeit</artifactId>
+  <groupId>com.demo.nopcommerce</groupId>
+  <artifactId>sample-maven-project</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>letskodeit</name>
+  <name>sample-maven-project</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -40,6 +40,35 @@
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.6</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
+    <dependency>
+      <groupId>org.uncommons</groupId>
+      <artifactId>reportng</artifactId>
+      <version>1.1.4</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>4.1.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.14.3</version>
+      <scope>compile</scope>
     </dependency>
 
   </dependencies>
