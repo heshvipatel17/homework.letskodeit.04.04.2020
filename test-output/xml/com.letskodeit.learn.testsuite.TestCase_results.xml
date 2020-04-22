@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.216">
+           time="0.249">
   <properties />
   
   
-            <testcase name="verifyUserShouldClickOnSignUpLink" time="0.062" classname="com.letskodeit.learn.testsuite.TestCase" />
-                <testcase name="verifyUserShouldClickOnLoginLink" time="0.053" classname="com.letskodeit.learn.testsuite.TestCase" />
-                <testcase name="verifyUserShouldGetWelcomeText" time="0.036" classname="com.letskodeit.learn.testsuite.TestCase" />
-                <testcase name="verifyUserShouldClickOnPracticeLink" time="0.065" classname="com.letskodeit.learn.testsuite.TestCase" />
+            <testcase name="verifyUserShouldClickOnSignUpLink" time="0.058" classname="com.letskodeit.learn.testsuite.TestCase" />
+                <testcase name="verifyUserShouldClickOnLoginLink" time="0.066" classname="com.letskodeit.learn.testsuite.TestCase" />
+                <testcase name="verifyUserShouldGetWelcomeText" time="0.063" classname="com.letskodeit.learn.testsuite.TestCase" />
+                <testcase name="verifyUserShouldClickOnPracticeLink" time="0.062" classname="com.letskodeit.learn.testsuite.TestCase" />
       
 </testsuite>

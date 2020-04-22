@@ -1,0 +1,12 @@
+2020-04-20 22:04:648 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 22:04:382 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 22:04:577 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 22:04:588 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 23:04:228 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 23:04:209 INFO  HomePage :31 - Click on login link [[ChromeDriver: chrome on WINDOWS (7f6ef26f659d59bcca643f6019481efd)] -> xpath: //a[@class='navbar-link fedora-navbar-link']]
+2020-04-20 23:04:88 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 23:04:447 INFO  HomePage :37 -  Click on practice link [[ChromeDriver: chrome on WINDOWS (846f40c9caa83e3f28424a070352253d)] -> xpath: //a[@class='fedora-navbar-link navbar-link']]
+2020-04-20 23:04:33 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 23:04:225 INFO  HomePage :43 -  Click on sign up link[[ChromeDriver: chrome on WINDOWS (41c04656074fe199ce61c198bcd0afb8)] -> xpath: //a[@id='header-sign-up-btn']]
+2020-04-20 23:04:819 INFO  BrowserSelector :19 - Launching Chrome Browser
+2020-04-20 23:04:122 INFO  HomePage :49 -  Assert welcome textWelcome to Let's Kode Itdisplayed on home page[[ChromeDriver: chrome on WINDOWS (48b0cebca5841d80bb31d64e65ef947f)] -> xpath: //h2[@class='headline']]

@@ -1,13 +1,18 @@
 package com.letskodeit.learn.utility;
 
 import com.letskodeit.learn.basepage.BasePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,6 +49,14 @@ public class Utility extends BasePage {
         driver.findElement(by).click();
     }
 
+    public void verifyText(By by, String str){
+        Assert.assertEquals(str,getTextFromElement(by));
+    }
+    public void verifyText(WebElement element, String str){
+        Assert.assertEquals(str,getTextFromElement(element));
+
+    }
+
     /**
      * This method will click on element
      */
@@ -63,8 +76,16 @@ public class Utility extends BasePage {
     }
 
     /**
+     * This method will return web element
+     */
+    public WebElement getElement(By by) {
+        return driver.findElement(by);
+    }
+
+    /**
      * This method will send text to element or field
      */
+
     public void sendTextToElement(By by, String str) {
         driver.findElement(by).sendKeys(str);
     }
@@ -148,6 +169,13 @@ public class Utility extends BasePage {
     }
 
     /**
+     * This method will used to wait web driver until element become clickable
+     */
+    public void waitUntilElementToBeClickable(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+    /**
      * This method will used to wait web driver until presence of element located by locator
      */
     public void waitUntilPresenceOfElementLocated(By by, int timeout) {
@@ -208,6 +236,72 @@ public class Utility extends BasePage {
      */
     public List<WebElement> webElementList(By by) {
         return driver.findElements(by);
+    }
+
+    public static String currentTimeStamp() {
+        Date d = new Date();
+        return d.toString().replace(":", "_").replace(" ", "_");
+    }
+
+
+    /**
+     * This method will take screen shot and store into screenshot folder
+     */
+    public static void takeScreenShot() {
+        String filePath = System.getProperty("user.dir") + "/src/main/java/screenshots/";
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
+        File scr1 = screenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scr1, new File(filePath + getRandomString(10) + ".jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * This method will take the screenshot and add to screenshot folder
+     * This method will required parameter like screenshot name and return destination path
+     *
+     * @param driver
+     * @param screenshotName
+     * @return
+     */
+    public static String getScreenshot(WebDriver driver, String screenshotName) {
+        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+
+        // After execution, you could see a folder "FailedTestsScreenshots" under screenshot folder
+        String destination = System.getProperty("user.dir") + "/src/main/java/screenshots/" + screenshotName + dateName + ".png";
+        File finalDestination = new File(destination);
+        try {
+            FileUtils.copyFile(source, finalDestination);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return destination;
+    }
+
+    /**
+     * This method will take the screenshot and add to test-output/html folder
+     * This method will required parameter like screenshot name and return the destination path
+     *
+     * @param fileName
+     * @return
+     */
+    public static String takeScreenShot(String fileName) {
+        String filePath = System.getProperty("user.dir") + "/test-output/html/";
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
+        File scr1 = screenshot.getScreenshotAs(OutputType.FILE);
+        String imageName = fileName + currentTimeStamp() + ".jpg";
+        String destination = filePath + imageName;
+        try {
+            FileUtils.copyFile(scr1, new File(destination));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return destination;
     }
 
 }

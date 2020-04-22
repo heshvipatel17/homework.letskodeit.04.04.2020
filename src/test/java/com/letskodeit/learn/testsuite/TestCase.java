@@ -2,34 +2,36 @@ package com.letskodeit.learn.testsuite;
 
 import com.letskodeit.learn.pages.HomePage;
 import com.letskodeit.learn.testbase.TestBase;
-import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
 public class TestCase extends TestBase {
-    HomePage homepage = new HomePage();
+    HomePage homePage;
 
-    @Test(priority = 0, groups = {"Sanity","Regression"})
+    @BeforeMethod(groups = {"Regression", "Smoke", "Sanity"})
+    public void setUp() {
+        homePage = new HomePage();
+    }
+
+    @Test(priority = 0, groups = {"Sanity", "Regression", "Smoke"})
     public void verifyUserShouldClickOnLoginLink() {
-        homepage.clickOnLoginLink();
+        homePage.clickOnLoginLink();
     }
 
-    @Test(priority = 1, groups = {"Sanity","Regression"})
+    @Test(priority = 1, groups = {"Sanity", "Regression"})
     public void verifyUserShouldClickOnPracticeLink() {
-        homepage.clickOnPracticeLink();
+        homePage.clickOnPracticeLink();
     }
 
-    @Test(priority = 2, groups = {"Smoke","Regression"})
+    @Test(priority = 2, groups = {"Smoke", "Regression"})
     public void verifyUserShouldClickOnSignUpLink() {
-        homepage.clickOnSignUpLink();
+        homePage.clickOnSignUpLink();
     }
 
-    @Test(priority = 3, groups = {"Smoke","Regression"})
+    @Test(priority = 3, groups = {"Regression"})
     public void verifyUserShouldGetWelcomeText() {
-        homepage.getWelcomeText();
-        String expectedText = "Welcome to Let's Kode It";
-        String actualText = homepage.getWelcomeText();
-        Assert.assertEquals(expectedText,actualText);
+        homePage.getWelcomeText("Welcome to Let's Kode It");
     }
 
 }
